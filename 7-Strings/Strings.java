@@ -1,4 +1,4 @@
-// Basic code of strings
+//*** Basic code of strings***
 // import java.util.*;
 // public class Strings{
 //     public static void demo(String str) {
@@ -54,19 +54,109 @@
 //     }
 // }
 
-    // ***Check Number is palindrome or not***
-    class Strings{
-        public static boolean Palindrome(String str) {
-            for(int i=0;i<str.length()/2;i++){
-                if(str.charAt(i)!=str.charAt(str.length()-1-i)){               
-                    return false;
-                }
+// ***Check Number is palindrome or not***
+// class Strings{
+//     public static boolean Palindrome(String str) {
+//         for(int i=0;i<str.length()/2;i++){
+//             if(str.charAt(i)!=str.charAt(str.length()-1-i)){               
+//                 return false;
+//             }
+//         }
+       
+//         return true;
+//     }
+//     public static void main(String[] args) {
+//         String str="racecar1";
+//         System.out.println(Palindrome(str));
+//     }
+// }
+
+// ***Direction Quetion(E,W,N,S)
+// public class Strings {
+//     public static float getPath(String path) {
+//         int x=0;
+//         int y=0;
+//         for(int i=0;i<path.length();i++){
+//             char dir=path.charAt(i);
+//             //  South
+//             if(dir=='S'){
+//                 y--;
+//             //North
+//             }else if(dir=='N'){
+//                 y++;
+//             // East
+//             }else if(dir=='W'){
+//                 x--;
+//              //West
+//             }else if(dir=='E'){
+//                 x++;
+//             }
+//         }
+//         int X2=x*x;
+//         int Y2=y*y;
+//         return (float)Math.sqrt(X2+Y2);
+//     }
+//     public static void main(String[] args) {
+//         String path="WNEENSENNN";  
+//         System.out.println(getPath(path) );
+//     }
+// }
+
+// ***String comparision***
+// public class Strings {
+//     public static void main(String[] args) {
+//         String s1="om";
+//         String s2="om";
+//         String s3=new String("om");
+//         if(s1==s2){
+//             System.out.println("s1 and s2 are equal");
+//         }else{
+//             System.out.println("s1 and s2 are not equal");
+//         }
+
+//         if(s1==s3){
+//             System.out.println("s1 and s2 are equal");
+//         }else{
+//             System.out.println("s1 and s2 are not equal");
+//         }
+
+//         if(s1.equals(s3)){
+//             System.out.println("s1 and s3 are equal");
+//         }else{
+//             System.out.println("s1 and s3 are not equal");
+//         }
+
+//     }
+// }
+
+// ***SUBSTRING***
+// public class Strings {
+//     public static String SubString(String str,int si,int ei) {
+//         String subStr="";
+//         for(int i=si;i<ei;i++){
+//             subStr +=str.charAt(i);
+//         }
+//         return subStr;
+//     }
+//     public static void main(String[] args) {
+//         String str="PratikshaSalunke";
+//         //inbuilt java function instead of write such code
+//         System.out.println(str.substring(0,5));
+//         System.out.println(SubString(str,0,5));
+//     }
+// }
+
+// **Printing Largest String**Lexicographically(Alphabetical order)
+public class Strings {
+
+    public static void main(String[] args) {
+        String fruits[]={"Banana","kivi","apple","arange"};
+        String largest=fruits[0];
+        for(int i=0;i<fruits.length;i++){
+            if(largest.compareTo(fruits[i])<0){
+                largest=fruits[i];
             }
-           
-            return true;
         }
-        public static void main(String[] args) {
-            String str="racecar1";
-            System.out.println(Palindrome(str));
-        }
+        System.out.println(largest);
     }
+}
