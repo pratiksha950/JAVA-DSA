@@ -147,16 +147,76 @@
 // }
 
 // **Printing Largest String**Lexicographically(Alphabetical order)
-public class Strings {
+// public class Strings {
 
-    public static void main(String[] args) {
-        String fruits[]={"Banana","kivi","apple","arange"};
-        String largest=fruits[0];
-        for(int i=0;i<fruits.length;i++){
-            if(largest.compareTo(fruits[i])<0){
-                largest=fruits[i];
+//     public static void main(String[] args) {
+//         String fruits[]={"Banana","kivi","apple","arange"};
+//         String largest=fruits[0];
+//         for(int i=0;i<fruits.length;i++){
+//             if(largest.compareTo(fruits[i])<0){
+//                 largest=fruits[i];
+//             }
+//         }
+//         System.out.println(largest);
+//     }
+// }
+
+// ***StringBuilder***
+// public class Strings {
+
+//     public static void main(String[] args) {
+//         StringBuilder sb=new StringBuilder("");
+//         for(char ch='a';ch<='z';ch++){
+//             sb.append(ch);
+//         }
+//         System.out.println(sb);
+//         System.out.println(sb.length());
+//     }
+// }
+
+// // ***For given string convert each first letter of a word to uppercase***
+// public class Strings {
+//     public static String StrToUpper(String  str) {
+//         StringBuilder sb=new StringBuilder("");
+//         char ch=Character.toUpperCase(str.charAt(0));
+//         sb.append(ch);
+//         for(int i=1;i<str.length();i++){
+//             if(str.charAt(i)==' ' && i<str.length()-1){
+//                 sb.append(str.charAt(i));
+//                 i++;
+//                 sb.append(Character.toUpperCase(str.charAt(i)));
+//             }else{
+//                 sb.append(str.charAt(i));
+//             }
+//         }
+//         return sb.toString();
+//     }
+//     public static void main(String[] args) {
+//         String str="hi my name is om";
+//         System.out.println(StrToUpper(str));
+//     }
+// }
+
+// ***string Compression***
+public class Strings {
+    public static String Compression(String  str) {
+        StringBuilder sb=new StringBuilder("");
+        for(int i=0;i<str.length();i++){
+            Integer count=1;
+            while(i<str.length()-1 && str.charAt(i)==str.charAt(i+1)){
+                count++;
+                i++;
             }
+            sb.append(str.charAt(i));
+            if(count>1){
+                sb.append(count.toString());
+            }
+
         }
-        System.out.println(largest);
+        return sb.toString();
+    }
+    public static void main(String[] args) {
+        String str="aaabcddeef";
+        System.out.println(Compression(str));
     }
 }
