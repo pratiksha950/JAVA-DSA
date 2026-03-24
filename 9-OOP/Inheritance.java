@@ -1,3 +1,4 @@
+//***Single inheritance***
 // public class Inheritance {
 //     public static void main(String[] args) {
 //         Fish f=new Fish();
@@ -92,55 +93,112 @@
 // Hybrid Inheritance Example
 
 // Parent 
-interface Animal {
-    void eat();
+// interface Animal {
+//     void eat();
+// }
+
+// // Second Parent 
+// interface Pet {
+//     void play();
+// }
+
+// // Child Class (Multilevel + Multiple)
+// class Dog implements Animal, Pet {
+
+//     public void eat() {
+//         System.out.println("Dog eats food");
+//     }
+
+//     public void play() {
+//         System.out.println("Dog plays with ball");
+//     }
+
+//     void bark() {
+//         System.out.println("Dog barks");
+//     }
+// }
+
+// // Another Child Class (Hierarchical)
+// class Cat implements Animal {
+
+//     public void eat() {
+//         System.out.println("Cat eats fish");
+//     }
+
+//     void meow() {
+//         System.out.println("Cat meows");
+//     }
+// }
+
+// // Main Class
+// public class Inheritance {
+
+//     public static void main(String[] args) {
+
+//         Dog d = new Dog();
+//         d.eat();
+//         d.play();
+//         d.bark();
+
+//         Cat c = new Cat();
+//         c.eat();
+//         c.meow();
+//     }
+// }
+
+//sample
+// public class Inheritance {
+
+//     public static void main(String[] args) {
+//         Queen Q=new Queen();
+//         Q.moves();
+//     }
+// }
+// interface chessPlayer{
+//     void moves();
+// }
+// class Queen implements chessPlayer{
+//     public void moves(){
+//         System.out.println("up,down,left,right,digonal(in all direction");
+//     }
+// }
+// class Rook implements chessPlayer{
+//     public void moves(){
+//         System.out.println("up,down,left,right");
+//     }
+// }
+// class King implements chessPlayer{
+//     public void moves(){
+//         System.out.println("up,down,left,right,digonal(in 1 step");
+//     }
+// }
+
+// ***Multiple inheritance (Interface code)***
+interface Herbivore {
+    void eatPlants();
 }
 
-// Second Parent 
-interface Pet {
-    void play();
+interface Carnivore {
+    void eatMeat();
 }
 
-// Child Class (Multilevel + Multiple)
-class Dog implements Animal, Pet {
+class Omnivore implements Herbivore, Carnivore {
 
-    public void eat() {
-        System.out.println("Dog eats food");
+    public void eatPlants() {
+        System.out.println("Eats plants");
     }
 
-    public void play() {
-        System.out.println("Dog plays with ball");
-    }
-
-    void bark() {
-        System.out.println("Dog barks");
+    public void eatMeat() {
+        System.out.println("Eats meat");
     }
 }
 
-// Another Child Class (Hierarchical)
-class Cat implements Animal {
-
-    public void eat() {
-        System.out.println("Cat eats fish");
-    }
-
-    void meow() {
-        System.out.println("Cat meows");
-    }
-}
-
-// Main Class
 public class Inheritance {
-
     public static void main(String[] args) {
 
-        Dog d = new Dog();
-        d.eat();
-        d.play();
-        d.bark();
+        Omnivore bear = new Omnivore();
 
-        Cat c = new Cat();
-        c.eat();
-        c.meow();
+        bear.eatPlants(); 
+        bear.eatMeat();   
     }
 }
