@@ -157,22 +157,113 @@
 // }
 
 // ***finding Power (x to power n) Optimized version having time complexity O(logn)***
+// public class Recursion {
+//     public static int OptimizedPower(int x,int pow) {
+//        if(pow==0){
+//         return 1;
+//        }
+
+//        int halfPow=OptimizedPower(x,pow/2);
+//       int halfPowSq=halfPow*halfPow;
+
+//       //n is odd
+//       if(pow%2!=0){
+//         halfPowSq=x*halfPowSq;
+//       }
+//       return halfPowSq;
+//     }
+//     public static void main(String[] args) {
+//         System.out.println(OptimizedPower(2,10));
+// }
+// }
+
+// ###Part 2 started###
+/*Question:Tiling
+Given a 2 × n board and tiles of size 2 × 1, count the number of ways to tile the given board using the 2 × 1 tiles.
+Condition:
+A tile can be placed either:
+Horizontally, or Vertically */
+
+// public class Recursion {
+//     public static int Tiling(int n) {//flore size(2*n)
+//       if(n==0 ||n==1){
+//         return 1;
+//       }
+
+//       return Tiling(n-1)+Tiling(n-2);//vertical+horizontal
+
+//     }
+//     public static void main(String[] args) {
+//        System.out.println(Tiling(4));
+// }
+// }
+
+// ***Remove Duplicate from string***
+// public class Recursion {
+//     public static void removeDuplicate(String str,int idx,StringBuilder newStr,boolean map[]) {
+//       if(idx==str.length()){
+//         System.out.println(newStr);
+//         return;
+//       }
+
+//       char currChar=str.charAt(idx);
+//       if(map[currChar-'a']==true){
+//         //duplicate occcure so call next char
+//          removeDuplicate(str,idx+1,newStr,map);
+//       }else{
+//         map[currChar-'a']=true;
+//         removeDuplicate(str,idx+1,newStr.append(currChar),map);
+//       }
+
+//     }
+//     public static void main(String[] args) {
+//       String str="abcdeettrr";
+//        removeDuplicate(str,0,new StringBuilder(""),new boolean[26]);
+// }
+// }
+
+/*Problem 13: Friends Pairing Problem
+Question:
+Given n friends, each one can remain single or can be paired up with some other friend. Each friend can be paired only once.
+Find the total number of ways in which friends can remain single or can be paired up.*/
+
+// public class Recursion {
+//     public static int Pair(int n) {
+//       if(n==1 ||n==2){
+//         return n;
+//       }
+      /*//single
+      int fnm1=Pair(n-1);
+      //pair
+      int fnm2=Pair(n-2);
+      int Pairways=(n-1)*fnm2;
+      //totalways
+      int totalways=fnm1+Pairways;*/
+
+//       return Pair(n-1)+(n-1)*Pair(n-2);
+//     }
+//     public static void main(String[] args) {
+//       System.out.println( Pair(3));
+// }
+// }
+
+/*Problem 14: Binary Strings Problem
+Print all binary strings of size N without consecutive ones.*/
+
 public class Recursion {
-    public static int OptimizedPower(int x,int pow) {
-       if(pow==0){
-        return 1;
-       }
+    public static void PrintString(int n,int lastPlace,String str) {
+    if(n==0){
+      System.out.println(str);
+      return;
+    }
+    //work
+    PrintString(n-1,0,str+"0");
 
-       int halfPow=OptimizedPower(x,pow/2);
-      int halfPowSq=halfPow*halfPow;
-
-      //n is odd
-      if(pow%2!=0){
-        halfPowSq=x*halfPowSq;
-      }
-      return halfPowSq;
+    if(lastPlace==0){
+      PrintString(n-1,1,str+"1");
+    }
     }
     public static void main(String[] args) {
-        System.out.println(OptimizedPower(2,10));
+      PrintString(3,0,"");
 }
 }
