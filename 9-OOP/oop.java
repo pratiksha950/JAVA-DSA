@@ -171,7 +171,8 @@ public class oop {
         h.walk();
         System.out.println(h.color);
 
-        Mustang M=new Mustang();//animal->Horse->Mustang constuctor sequence
+        Mustang M=new Mustang();
+        //animal->Horse->Mustang constuctor sequence
 
     }
 }
