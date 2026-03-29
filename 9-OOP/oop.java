@@ -162,52 +162,52 @@
 
 // } 
 
-//abstract class
-public class oop {
+//***abstract class
+// public class oop {
 
-    public static void main(String[] args) {
-        Horse h=new Horse();
-        h.eat();
-        h.walk();
-        System.out.println(h.color);
+//     public static void main(String[] args) {
+//         Horse h=new Horse();
+//         h.eat();
+//         h.walk();
+//         System.out.println(h.color);
 
-        Mustang M=new Mustang();
-        //animal->Horse->Mustang constuctor sequence
+//         Mustang M=new Mustang();
+//         //animal->Horse->Mustang constuctor sequence
 
-    }
-}
-abstract class Animal{
-    String color;
-    Animal(){ //we can make constructor
-        color="red";
-        System.out.println("animal constructor called");
-    }
-    void eat(){
-        System.out.println("animal eats");
-    }
-    abstract void walk();//gives only idea no implementation
-}
-class Horse extends Animal{
-    Horse(){
-        System.out.println("horse constructor called");
-    }
-    void changeColor(){
-        color="pink";
-    }
-    void walk(){
-        System.out.println("walks on 4 legs");
-    }
-}
-class Chicken extends Animal{
-    void changeColor(){
-        color="orange";
-    }
-        void walk(){
-            System.out.println("walks on 2 legs");
-        }
-}
-class Mustang extends Horse{
-    Mustang(){
-        System.out.println("Mustang constructor called");
-    }
-}
+//     }
+// }
+// abstract class Animal{
+//     String color;
+//     Animal(){ //we can make constructor
+//         color="red";
+//         System.out.println("animal constructor called");
+//     }
+//     void eat(){
+//         System.out.println("animal eats");
+//     }
+//     abstract void walk();//gives only idea no implementation
+// }
+// class Horse extends Animal{
+//     Horse(){
+//         System.out.println("horse constructor called");
+//     }
+//     void changeColor(){
+//         color="pink";
+//     }
+//     void walk(){
+//         System.out.println("walks on 4 legs");
+//     }
+// }
+// class Chicken extends Animal{
+//     void changeColor(){
+//         color="orange";
+//     }
+//         void walk(){
+//             System.out.println("walks on 2 legs");
+//         }
+// }
+// class Mustang extends Horse{
+//     Mustang(){
+//         System.out.println("Mustang constructor called");
+//     }
+// }
